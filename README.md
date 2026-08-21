@@ -6,7 +6,8 @@ The system detects traffic violations from images/videos, recognizes vehicle num
 
 ## 🚀 Live Demo
 
-**Railway:** https://trafficvds-production.up.railway.app
+**Railway:**
+https://trafficvds-production.up.railway.app
 
 ## ✨ Features
 
@@ -37,8 +38,6 @@ The system detects traffic violations from images/videos, recognizes vehicle num
 | Dataset Management   | Roboflow                       |
 
 ## 📊 Model Performance
-
-The following results are reported in the project evaluation:
 
 | Module                       |       Performance |
 | ---------------------------- | ----------------: |
@@ -85,73 +84,46 @@ Dashboard & Records
 
 ### Super Admin Dashboard
 
-Add the **Super Admin Dashboard screenshot** from the project report here.
-
-Then add:
-
-```markdown
-![Super Admin Dashboard](/super admin dashboard.jpeg)
-```
+[![Super Admin Dashboard](super%20admin%20dashboard.jpeg)](https://github.com/nidhi-singh28/Traffic_Violation_Detection_System/blob/main/super%20admin%20dashboard.jpeg)
 
 ### Sub Admin Dashboard
 
-Add the **Sub Admin Dashboard screenshot** here.
-
-```markdown
-![Sub Admin Dashboard](docs/screenshots/sub-admin-dashboard.png)
-```
+[![Sub Admin Dashboard](sub%20admin%20dashboard.jpeg)](https://github.com/nidhi-singh28/Traffic_Violation_Detection_System/blob/main/sub%20admin%20dashboard.jpeg)
 
 ### Helmet Detection
 
-Add the **Helmet Detection Result** screenshot here.
+[![Helmet Detection](helmet%20detection.jpeg)](https://github.com/nidhi-singh28/Traffic_Violation_Detection_System/blob/main/helmet%20detection.jpeg)
 
-```markdown
-![Helmet Detection](docs/screenshots/helmet-detection.png)
-```
-```markdown
-![Helmet Detection](docs/screenshots/helmet-detection.png)
-```
+### Helmet Detection — Additional Result
 
-Helmet Detection Video
-
-▶️ Watch Helmet Detection Demo
-
-Replace YOUR_VIDEO_LINK_HERE with your uploaded video link.
+[![Helmet Detection Result](helmet_det_3.jpeg)](https://github.com/nidhi-singh28/Traffic_Violation_Detection_System/blob/main/helmet_det_3.jpeg)
 
 ### Triple Riding Detection
 
-Add the **Triple Riding Detection Result** screenshot here.
+[![Triple Riding Detection](triple%20riding%20detection.jpeg)](https://github.com/nidhi-singh28/Traffic_Violation_Detection_System/blob/main/triple%20riding%20detection.jpeg)
 
-```markdown
-![Triple Riding Detection](docs/screenshots/triple-riding.png)
-```
-```markdown
-![Triple Riding Detection](docs/screenshots/triple-riding.png)
-```
+### Triple Riding Detection — Additional Result
 
-### Number Plate & OCR
+[![Triple Riding Detection Result](triple_riding_det.png)](https://github.com/nidhi-singh28/Traffic_Violation_Detection_System/blob/main/triple_riding_det.png)
 
-Add the **Number Plate Detection / OCR Result** screenshot here.
+### Number Plate Recognition
 
-```markdown
-![Number Plate OCR](docs/screenshots/number-plate-ocr.png)
-```
+[![Number Plate Recognition](number%20plate%20recognition.jpeg)](https://github.com/nidhi-singh28/Traffic_Violation_Detection_System/blob/main/number%20plate%20recognition.jpeg)
 
 ### Generated Challan
 
-Add the **Generated Challan** screenshot here.
-
-```markdown
-![Generated Challan](docs/screenshots/generated-challan.png)
-```
+[![Generated Challan](chllan%20generate.jpeg)](https://github.com/nidhi-singh28/Traffic_Violation_Detection_System/blob/main/chllan%20generate.jpeg)
 
 ### Challan History
 
-Add the **Challan History** screenshot here.
+[![Challan History](challan%20history.jpeg)](https://github.com/nidhi-singh28/Traffic_Violation_Detection_System/blob/main/challan%20history.jpeg)
 
-```markdown
-![Challan History](docs/screenshots/challan-history.png)
-```
+## 🎥 Helmet Detection Demo
+
+A Helmet Detection video is also included in the project demonstration.
+
+**Live Demo:**
+https://trafficvds-production.up.railway.app
 
 ## 👥 Role-Based Access
 
@@ -171,14 +143,6 @@ Add the **Challan History** screenshot here.
 * Generate challans
 * View traffic rules
 * Access personal detection and violation records
-
-## ⚠️ Limitations
-
-* Detection performance may decrease under poor lighting.
-* Small or blurred number plates may not be recognized correctly.
-* Partial occlusion can affect object detection.
-* Rain and fog can reduce image quality.
-* OCR accuracy may decrease for damaged or unclear number plates.
 
 ## 🔮 Future Scope
 
