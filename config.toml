@@ -1,0 +1,14 @@
+[server]
+headless = true
+port = 8501
+runOnSave = true
+
+[client]
+showSidebarNavigation = false
+
+[theme]
+primaryColor = "#1a73e8"
+backgroundColor = "#0f1117"
+secondaryBackgroundColor = "#1a1d2e"
+textColor = "#e0e0e0"
+font = "sans serif"
