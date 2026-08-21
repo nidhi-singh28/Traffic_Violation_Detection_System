@@ -129,7 +129,7 @@ docs/screenshots/super-admin-dashboard.png
 Then add:
 
 ```markdown
-![Super Admin Dashboard](docs/screenshots/super-admin-dashboard.png)
+![Super Admin Dashboard](super admin dashboard.png)
 ```
 
 ### Sub Admin Dashboard
