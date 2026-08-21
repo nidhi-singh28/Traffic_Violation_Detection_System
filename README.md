@@ -81,39 +81,6 @@ Challan Generation
 Dashboard & Records
 ```
 
-## 📁 Project Structure
-
-```text
-Traffic_VDS_Demo/
-│
-├── app.py
-├── requirements.txt
-├── README.md
-│
-├── pages/
-│   ├── dashboard.py
-│   ├── challans.py
-│   ├── detections.py
-│   └── rules.py
-│
-├── utils/
-│   ├── auth.py
-│   ├── demo_data.py
-│   └── ...
-│
-└── docs/
-    └── screenshots/
-        ├── super-admin-dashboard.png
-        ├── sub-admin-dashboard.png
-        ├── helmet-detection.png
-        ├── triple-riding.png
-        ├── number-plate-ocr.png
-        ├── generated-challan.png
-        └── challan-history.png
-```
-
-> This public repository is a demo/portfolio version. Private credentials, trained model weights, private datasets and production configuration are intentionally excluded.
-
 ## 🖼️ Screenshots
 
 ### Super Admin Dashboard
@@ -123,7 +90,7 @@ Add the **Super Admin Dashboard screenshot** from the project report here.
 Then add:
 
 ```markdown
-![Super Admin Dashboard](super admin dashboard.jpeg)
+![Super Admin Dashboard](/super admin dashboard.jpeg)
 ```
 
 ### Sub Admin Dashboard
