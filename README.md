@@ -147,11 +147,23 @@ Add the **Helmet Detection Result** screenshot here.
 ```markdown
 ![Helmet Detection](docs/screenshots/helmet-detection.png)
 ```
+```markdown
+![Helmet Detection](docs/screenshots/helmet-detection.png)
+```
+
+Helmet Detection Video
+
+▶️ Watch Helmet Detection Demo
+
+Replace YOUR_VIDEO_LINK_HERE with your uploaded video link.
 
 ### Triple Riding Detection
 
 Add the **Triple Riding Detection Result** screenshot here.
 
+```markdown
+![Triple Riding Detection](docs/screenshots/triple-riding.png)
+```
 ```markdown
 ![Triple Riding Detection](docs/screenshots/triple-riding.png)
 ```
