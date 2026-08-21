@@ -141,6 +141,13 @@ https://trafficvds-production.up.railway.app
 
 ## 📌 Project Note
 
-This project was developed for academic and portfolio demonstration purposes and demonstrates the practical application of Computer Vision, Deep Learning, OCR, APIs, databases and web technologies for intelligent traffic monitoring.
+This project was developed collaboratively as an academic project by a team of students. It demonstrates the practical application of Computer Vision, Deep Learning, OCR, APIs, databases, and web technologies for intelligent traffic monitoring.
 
-The public repository contains a demo-safe version and does not expose private credentials, production database configuration or trained model weights.
+Team Contributor:
+
+Parneet Kaur — GitHub Profile
+
+The project was developed for academic and portfolio demonstration purposes.
+
+The public repository contains a demo-safe version and does not expose private credentials, production database configuration, or trained model weights.
+
