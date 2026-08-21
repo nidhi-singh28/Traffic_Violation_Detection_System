@@ -120,16 +120,10 @@ Traffic_VDS_Demo/
 
 Add the **Super Admin Dashboard screenshot** from the project report here.
 
-Save it as:
-
-```text
-docs/screenshots/super-admin-dashboard.png
-```
-
 Then add:
 
 ```markdown
-![Super Admin Dashboard](super admin dashboard.png)
+![Super Admin Dashboard](super admin dashboard.jpeg)
 ```
 
 ### Sub Admin Dashboard
