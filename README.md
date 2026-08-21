@@ -104,7 +104,7 @@ Dashboard & Records
 
 ### Triple Riding Detection — Additional Result
 
-[![Triple Riding Detection Result](triple_riding_det.png)](https://github.com/nidhi-singh28/Traffic_Violation_Detection_System/blob/main/triple_riding_det.png)
+[![Triple Riding Detection Result](triple_riding_detec.png)](https://github.com/nidhi-singh28/Traffic_Violation_Detection_System/blob/main/triple_riding_detec.png)
 
 ### Number Plate Recognition
 
