@@ -145,7 +145,7 @@ This project was developed collaboratively as an academic project by a team of s
 
 Team Contributor:
 
-Parneet Kaur — GitHub Profile
+Parneet Kaur — https://github.com/parneetk29
 
 The project was developed for academic and portfolio demonstration purposes.
 
