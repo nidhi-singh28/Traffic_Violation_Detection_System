@@ -46,22 +46,6 @@ https://trafficvds-production.up.railway.app
 | Number Plate Detection       | **~85% Accuracy** |
 | OCR Recognition              | **~85% Accuracy** |
 
-### Helmet Detection
-
-* mAP@50: **92.72%**
-* mAP@50–95: **70.90%**
-* Precision: **87.78%**
-* Recall: **89.59%**
-
-### Triple Riding / Mobile Usage Detection
-
-* mAP@50: **88.11%**
-* mAP@50–95: **51.49%**
-* Precision: **83.40%**
-* Recall: **81.70%**
-
-> These values are the evaluation results reported in the project report and should not be interpreted as guaranteed real-world accuracy.
-
 ## 🔄 System Workflow
 
 ```text
