@@ -1,392 +1,225 @@
-# 🚦 Traffic VDS — Traffic Challan Management System
+# Traffic VDS — Traffic Violation Detection System
 
-> **Public Portfolio / Demo Build**
+AI-based traffic violation detection and challan management system using Computer Vision and Deep Learning.
 
-Traffic VDS is an AI-assisted traffic violation and challan management platform designed to demonstrate how computer vision, violation workflows, traffic rules, and administrative dashboards can be brought together in one web application.
+The system detects traffic violations from images/videos, recognizes vehicle number plates, and supports automatic challan generation and management through a role-based dashboard.
 
-This repository is the **public demo/portfolio version** of the project. It is intentionally separated from the original private academic/development repository.
+## 🚀 Live Demo
 
----
-
-## 🌐 Live Demo
-
-**Live App:** _Add your deployed Streamlit URL here_
-
-> 💡 After deployment, replace the line above with your live URL.
-
-### Demo Accounts
-
-| Role | Email | Password |
-|---|---|---|
-| Super Admin | `admin@traffic-demo.app` | `demo123` |
-| Sub Admin | `subadmin@traffic-demo.app` | `demo123` |
-
-These are **demo-only credentials**. No production account or real user data is used in this repository.
-
----
-
-## 📸 Screenshots
-
-Add screenshots to `docs/screenshots/` and use the filenames below.
-
-### 1. Login / Landing Page
-**File:** `docs/screenshots/01-login.png`
-
-Show:
-- Traffic VDS title
-- Login form
-- Demo access information
-
-<!-- Add image here after uploading it:
-![Traffic VDS Login](docs/screenshots/01-login.png)
--->
-
-### 2. Super Admin Dashboard
-**File:** `docs/screenshots/02-super-admin-dashboard.png`
-
-Show:
-- Total challans
-- Pending/approved/paid statistics
-- Revenue
-- Dashboard navigation
-
-<!--
-![Super Admin Dashboard](docs/screenshots/02-super-admin-dashboard.png)
--->
-
-### 3. Challan History
-**File:** `docs/screenshots/03-challan-history.png`
-
-Show:
-- Challan list
-- Status
-- Fine amount
-- Vehicle number
-- Filtering/search
-
-<!--
-![Challan History](docs/screenshots/03-challan-history.png)
--->
-
-### 4. AI Violation Detection — Demo Mode
-**File:** `docs/screenshots/04-detection.png`
-
-Show:
-- Upload image/video section
-- Detection result
-- Detected violation
-- Vehicle number
-- Demo Mode notice
-
-<!--
-![Violation Detection](docs/screenshots/04-detection.png)
--->
-
-### 5. Traffic Rules
-**File:** `docs/screenshots/05-traffic-rules.png`
-
-Show:
-- Traffic rules
-- Fine amounts
-- Categories
-- Rule management
-
-<!--
-![Traffic Rules](docs/screenshots/05-traffic-rules.png)
--->
-
-### 6. Sub Admin Management
-**File:** `docs/screenshots/06-sub-admins.png`
-
-Show:
-- Sub-admin list
-- Active/inactive status
-- Management controls
-
-<!--
-![Sub Admin Management](docs/screenshots/06-sub-admins.png)
--->
-
-### 7. Sub Admin Dashboard
-**File:** `docs/screenshots/07-sub-admin-dashboard.png`
-
-Show:
-- Personal challan statistics
-- My challans
-- Detection workflow
-
-<!--
-![Sub Admin Dashboard](docs/screenshots/07-sub-admin-dashboard.png)
--->
-
----
+**Railway:** https://trafficvds-production.up.railway.app
 
 ## ✨ Features
 
-### Super Admin
+* Helmet violation detection
+* Triple-riding detection
+* Mobile phone usage detection
+* Vehicle number-plate detection
+* Number plate recognition using OCR
+* Automatic challan generation
+* Challan history and status management
+* Traffic rules management
+* Super Admin and Sub Admin roles
+* Image and video-based detection
+* Dashboard for violation monitoring
 
-- Dashboard with challan statistics and revenue
-- Challan history with status and fine management
-- Violation detection records
-- Traffic rules management
-- Sub-admin management
-- Image/video violation detection workflow
-- Challan generation from detected violations
+## 🛠️ Tech Stack
 
-### Sub Admin
+| Component            | Technology                     |
+| -------------------- | ------------------------------ |
+| Frontend             | Streamlit                      |
+| Backend              | FastAPI                        |
+| Object Detection     | YOLOv8 (Ultralytics)           |
+| OCR                  | EasyOCR                        |
+| Computer Vision      | OpenCV                         |
+| Database             | Supabase / PostgreSQL          |
+| Programming Language | Python                         |
+| Model Training       | Google Colab + NVIDIA Tesla T4 |
+| Dataset Management   | Roboflow                       |
 
-- Personal dashboard
-- View own challans
-- Upload media for violation detection
-- Generate challans from detected violations
-- View traffic rules
+## 📊 Model Performance
 
-### Detection Workflow
+The following results are reported in the project evaluation:
 
-The original project architecture includes computer-vision components for:
+| Module                       |       Performance |
+| ---------------------------- | ----------------: |
+| Helmet Detection             | **92.72% mAP@50** |
+| Triple Riding / Mobile Usage | **88.11% mAP@50** |
+| Number Plate Detection       | **~85% Accuracy** |
+| OCR Recognition              | **~85% Accuracy** |
 
-- Helmet violation detection
-- Triple riding detection
-- Number plate recognition using OCR
-- Photo and video processing
+### Helmet Detection
 
-For this **public portfolio build**, the detection engine is deliberately replaced by a lightweight **mock/demo detector** so that the repository can run without private trained weights, large ML dependencies, or a production backend.
+* mAP@50: **92.72%**
+* mAP@50–95: **70.90%**
+* Precision: **87.78%**
+* Recall: **89.59%**
 
-The UI still demonstrates the complete workflow:
+### Triple Riding / Mobile Usage Detection
 
-```text
-Upload Image / Video
-        ↓
-Demo Detection Engine
-        ↓
-Violation Result
-        ↓
-Traffic Rule Matching
-        ↓
-Fine Calculation
-        ↓
-Generate Challan
-        ↓
-Challan History / Dashboard
-```
+* mAP@50: **88.11%**
+* mAP@50–95: **51.49%**
+* Precision: **83.40%**
+* Recall: **81.70%**
 
----
+> These values are the evaluation results reported in the project report and should not be interpreted as guaranteed real-world accuracy.
 
-## 🏗️ Architecture
-
-### Original Project Concept
-
-```text
-                ┌───────────────────────┐
-                │   Streamlit Frontend  │
-                │ Dashboard / Admin UI  │
-                └───────────┬───────────┘
-                            │
-                            ▼
-                ┌───────────────────────┐
-                │      FastAPI API      │
-                │ Detection Pipeline    │
-                └───────────┬───────────┘
-                            │
-              ┌─────────────┼─────────────┐
-              ▼             ▼             ▼
-          YOLO Models    EasyOCR       OpenCV
-          Helmet/Triple  Number Plate   Media
-              │             │             │
-              └─────────────┼─────────────┘
-                            ▼
-                  Challan Management
-```
-
-### Public Demo Architecture
+## 🔄 System Workflow
 
 ```text
-                ┌───────────────────────┐
-                │   Streamlit Frontend  │
-                │ Dashboard / Admin UI  │
-                └───────────┬───────────┘
-                            │
-                            ▼
-                ┌───────────────────────┐
-                │   Demo Detection      │
-                │    Mock Engine        │
-                └───────────┬───────────┘
-                            │
-                            ▼
-                ┌───────────────────────┐
-                │ In-Session Demo Store │
-                │ Rules / Challans /    │
-                │ Detection Records     │
-                └───────────────────────┘
+Image / Video
+      ↓
+YOLOv8 Violation Detection
+      ↓
+Number Plate Detection
+      ↓
+EasyOCR Number Plate Recognition
+      ↓
+FastAPI Processing
+      ↓
+Challan Generation
+      ↓
+Dashboard & Records
 ```
-
----
-
-## 🧰 Tech Stack
-
-| Layer | Technology |
-|---|---|
-| Frontend | Streamlit |
-| Original Backend | FastAPI |
-| Original Computer Vision | YOLO / Ultralytics, OpenCV |
-| Original OCR | EasyOCR |
-| Original ML Framework | PyTorch |
-| Original Database | Supabase / PostgreSQL |
-| Public Demo Storage | Streamlit session state |
-| Public Demo Detection | Python mock detection engine |
-
----
 
 ## 📁 Project Structure
 
 ```text
 Traffic_VDS_Demo/
+│
 ├── app.py
 ├── requirements.txt
-├── runtime.txt
-├── .gitignore
 ├── README.md
-├── .streamlit/
-│   └── config.toml
+│
 ├── pages/
-│   ├── challan_history.py
-│   ├── detect_violation.py
-│   ├── my_challans.py
-│   ├── sub_admin_dashboard.py
-│   ├── sub_admin_management.py
-│   ├── super_admin_dashboard.py
-│   ├── traffic_rules.py
-│   ├── traffic_rules_view.py
-│   └── violation_detections.py
+│   ├── dashboard.py
+│   ├── challans.py
+│   ├── detections.py
+│   └── rules.py
+│
 ├── utils/
-│   ├── backend_api.py
-│   ├── styles.py
-│   └── supabase_client.py
+│   ├── auth.py
+│   ├── demo_data.py
+│   └── ...
+│
 └── docs/
     └── screenshots/
+        ├── super-admin-dashboard.png
+        ├── sub-admin-dashboard.png
+        ├── helmet-detection.png
+        ├── triple-riding.png
+        ├── number-plate-ocr.png
+        ├── generated-challan.png
+        └── challan-history.png
 ```
 
----
+> This public repository is a demo/portfolio version. Private credentials, trained model weights, private datasets and production configuration are intentionally excluded.
 
-## 🚀 Run Locally
+## 🖼️ Screenshots
 
-### 1. Clone the repository
+### Super Admin Dashboard
 
-```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
-cd Traffic_VDS_Demo
-```
+Add the **Super Admin Dashboard screenshot** from the project report here.
 
-### 2. Create a virtual environment
-
-```bash
-python -m venv .venv
-```
-
-Activate it:
-
-**Windows**
-
-```bash
-.venv\Scripts\activate
-```
-
-**macOS / Linux**
-
-```bash
-source .venv/bin/activate
-```
-
-### 3. Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### 4. Start the Streamlit application
-
-```bash
-streamlit run app.py
-```
-
-The app will open in your browser.
-
----
-
-## ☁️ Deployment
-
-This public build is designed to be easy to deploy as a Streamlit application.
-
-### Streamlit deployment
-
-1. Push this repository to GitHub.
-2. Create a new Streamlit deployment.
-3. Select this repository.
-4. Set the main file to:
+Save it as:
 
 ```text
-app.py
+docs/screenshots/super-admin-dashboard.png
 ```
 
-5. Deploy.
+Then add:
 
-No Supabase credentials, API keys, YOLO weights, or FastAPI server are required for this demo build.
+```markdown
+![Super Admin Dashboard](docs/screenshots/super-admin-dashboard.png)
+```
 
----
+### Sub Admin Dashboard
 
-## 🔐 Privacy & Security
+Add the **Sub Admin Dashboard screenshot** here.
 
-This public repository intentionally excludes:
+```markdown
+![Sub Admin Dashboard](docs/screenshots/sub-admin-dashboard.png)
+```
 
-- Production Supabase credentials
-- API keys
-- Passwords
-- `.streamlit/secrets.toml`
-- Trained YOLO model weights
-- Private datasets
-- Real challan records
-- Real user information
-- Production deployment configuration
-- Private development documentation
+### Helmet Detection
 
-The demo uses synthetic/sample records only.
+Add the **Helmet Detection Result** screenshot here.
 
----
+```markdown
+![Helmet Detection](docs/screenshots/helmet-detection.png)
+```
 
-## 📌 About the Public Demo
+### Triple Riding Detection
 
-This repository is intended for **portfolio and academic demonstration purposes**.
+Add the **Triple Riding Detection Result** screenshot here.
 
-The public build demonstrates the application's interface, workflow, role-based navigation, challan management, traffic-rule management, and detection-to-challan flow without exposing private project assets or production credentials.
+```markdown
+![Triple Riding Detection](docs/screenshots/triple-riding.png)
+```
 
-The original project may contain a fuller computer-vision implementation with trained models and backend services; those private assets are intentionally not included here.
+### Number Plate & OCR
 
----
+Add the **Number Plate Detection / OCR Result** screenshot here.
 
-## 👩‍💻 Project Collaboration
+```markdown
+![Number Plate OCR](docs/screenshots/number-plate-ocr.png)
+```
 
-The Traffic VDS system was developed collaboratively as an academic/project implementation.
+### Generated Challan
 
-This public repository is a **cleaned portfolio/demo build** created separately from the original private development repository.
+Add the **Generated Challan** screenshot here.
 
----
+```markdown
+![Generated Challan](docs/screenshots/generated-challan.png)
+```
 
-## 📬 Future Improvements
+### Challan History
 
-- Connect the public UI to a secured production backend
-- Replace mock detection with deployable optimized ML inference
-- Add secure cloud storage for evidence
-- Add stronger authentication and role-based authorization
-- Add payment/status integration
-- Add analytics and reporting
-- Add model confidence and detection visualizations
+Add the **Challan History** screenshot here.
 
----
+```markdown
+![Challan History](docs/screenshots/challan-history.png)
+```
 
-## ⭐ Portfolio Note
+## 👥 Role-Based Access
 
-If you are viewing this project as a portfolio piece, the recommended flow is:
+### Super Admin
 
-**Login → Super Admin Dashboard → Challan History → Traffic Rules → Detect Violation → Generate Challan → Violation Detections**
+* Manage Sub Admin accounts
+* Create and manage traffic rules
+* Perform image/video violation detection
+* View complete challan history
+* Update challan amount
+* Change challan status
+* Monitor system activities
 
-The screenshots above are intentionally organized around this user journey.
+### Sub Admin
+
+* Perform image/video violation detection
+* Generate challans
+* View traffic rules
+* Access personal detection and violation records
+
+## ⚠️ Limitations
+
+* Detection performance may decrease under poor lighting.
+* Small or blurred number plates may not be recognized correctly.
+* Partial occlusion can affect object detection.
+* Rain and fog can reduce image quality.
+* OCR accuracy may decrease for damaged or unclear number plates.
+
+## 🔮 Future Scope
+
+* Night-time traffic detection
+* Speed violation detection
+* Live CCTV integration
+* Real-time video processing
+* RTO/vehicle database integration
+* Automated SMS/email notifications
+* Mobile application
+* Large-scale cloud deployment
+
+## 📌 Project Note
+
+This project was developed for academic and portfolio demonstration purposes and demonstrates the practical application of Computer Vision, Deep Learning, OCR, APIs, databases and web technologies for intelligent traffic monitoring.
+
+The public repository contains a demo-safe version and does not expose private credentials, production database configuration or trained model weights.
